@@ -1,0 +1,163 @@
+﻿/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    background: url('https://png.pngtree.com/thumb_back/fh260/background/20210819/pngtree-abstract-light-blue-background-image_763960.jpg')
+}
+
+/* Header styles */
+h1 {
+    margin-top: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Converter section styles */
+#converter_section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa theo chiều ngang */
+    text-align: center; /* Căn giữa văn bản */
+}
+
+    #converter_section label {
+        font-weight: bold;
+    }
+
+    #converter_section input[type="number"] {
+        padding: 8px;
+        width: 100px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    #converter_section button {
+        padding: 8px 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px; /* Thêm margin để tạo khoảng cách với kết quả */
+    }
+
+        #converter_section button:hover {
+            background-color: #45a049;
+        }
+
+/* Result styles */
+#result {
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 30px;
+    border-radius: 5px;
+    background-color: #0074D9; /* Màu nền xanh lá cây */
+    width: 100%; /* Để kết quả quy đổi căn giữa */
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
+}
+
+/* Table styles */
+#exchange_table {
+    background-color: #fff;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    #exchange_table th, #exchange_table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    #exchange_table th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        color: #333;
+    }
+
+    #exchange_table tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #exchange_table tbody tr:hover {
+        background-color: #ddd;
+    }
+
+/* Last update time styles */
+#last_updated {
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+    color: #777;
+}
+
+/* Currency Explanation Table */
+#currency_explanation_table {
+    width: 30%; /* Đặt chiều rộng của bảng là 60% */
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+    #currency_explanation_table th,
+    #currency_explanation_table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    #currency_explanation_table th {
+        background-color: #f2f2f2;
+        color: #333;
+        font-weight: bold;
+    }
+
+    #currency_explanation_table tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #currency_explanation_table tbody tr:hover {
+        background-color: #ddd;
+    }
+
+#header {
+    background-color: #282c34;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    border-bottom: 5px solid #4CAF50;
+}
+#content-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#header img {
+    width: 150px; /* Điều chỉnh kích thước chiều rộng của các ảnh */
+    height: auto; /* Tự động tính toán chiều cao để giữ tỷ lệ */
+    margin: 0 10px; /* Khoảng cách giữa các ảnh */
+    display: inline-block; /* Hiển thị các ảnh cùng hàng với nhau */
+    animation: blink 5s infinite;
+}
+
+.side-div {
+    background-size: cover;
+    width: 15%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Tỉ Giá Tiền Tệ</title>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- Load Google Charts library -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <div id="header">
+        <img src="http://cdn-gd-v1.webbnc.net/useruploads/userfiles//505223/images/brunei.jpg" alt="1" />
+        <img src="http://cdn-gd-v1.webbnc.net/useruploads/userfiles//505223/images/indonesia.jpg" alt="2" />
+        <img src="http://cdn-gd-v1.webbnc.net/useruploads/userfiles//505223/images/Lao.jpg" alt="3" />
+        <img src="http://cdn-gd-v1.webbnc.net/useruploads/userfiles//505223/images/Philippin.jpg" alt="4" />
+        <img src="http://cdn-gd-v1.webbnc.net/useruploads/userfiles//505223/images/Thailan.jpg" alt="5" />
+        <img src="https://www.sbv.gov.vn/webcenter/cs/groups/cucphathanhkhoquy/documents/noidungtinh/c2j2/mdcy/~edisp/~export/SBVWEBAPP01SBV072320~3/338348-12.jpg" alt="6" />
+        <img src="https://imgs.vietnamnet.vn/Images/2015/11/21/08/20151121082602-usd.jpg" alt="7" />
+    </div>
+    <div id="content-container">
+        <div class="side-div">
+            <img src="" />
+        </div>
+
+        <div class="side-div"></div>
+    </div>
+    <h1>Biểu đồ tỉ giá so với 1 USD</h1>
+    <div id="chart_div"></div>
+    <!-- USD to VND converter -->
+
+    <h1>Quy đổi từ USD sang VND  <img src="3.jpg" alt="hihi" width="50" height="40"></h1>
+    <div class="parent-container">
+        <div class="centered-div">
+            <label for="usdAmount">ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤSố tiền USD:</label>
+            <input type="number" id="usdAmount" name="usdAmount" min="0">
+            <button onclick="convertUSDToVND()">Quy đổi</button>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <h1>Dữ liệu tỷ giá tiền tệ cập nhật theo thời gian</h1>
+    <table id="exchange_table">
+        <thead>
+            <tr>
+                <th>Mã Tiền Tệ</th>
+                <th>Đơn Vị Tiền Tệ Của</th>
+                <th>Tỷ Giá</th>
+                <th>Thời Gian Cập Nhật</th>
+            </tr>
+        </thead>
+        <tbody id="exchange_table_body">
+            <!-- Rows of data will be added here using JavaScript -->
+        </tbody>
+    </table>
+
+    <!-- Display last update time -->
+    <p id="last_updated"></p>
+
+
+    <!-- Link to JavaScript file -->
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

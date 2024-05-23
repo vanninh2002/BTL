@@ -1,0 +1,195 @@
+[
+    {
+        "id": "b0ecf1213aadaad8",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e2d971b8cc90beb6",
+        "type": "inject",
+        "z": "b0ecf1213aadaad8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 220,
+        "wires": [
+            [
+                "767d777f77c2e278"
+            ]
+        ]
+    },
+    {
+        "id": "7e1fac4035a10d48",
+        "type": "debug",
+        "z": "b0ecf1213aadaad8",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "767d777f77c2e278",
+        "type": "http request",
+        "z": "b0ecf1213aadaad8",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost:8000",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 390,
+        "y": 240,
+        "wires": [
+            [
+                "24dda71d2695eac9",
+                "3586b8dbd54b244d"
+            ]
+        ]
+    },
+    {
+        "id": "24dda71d2695eac9",
+        "type": "function",
+        "z": "b0ecf1213aadaad8",
+        "name": "function 1",
+        "func": "// Lấy dữ liệu từ HTTP request\nvar jsonOBJ = JSON.parse(msg.payload)\n\nmsg.dataInsert = JSON.stringify(jsonOBJ.filtered_rates);\n// Cần lấy dữ liệu có form như sau:\n/*\n{\n    \"USD\": 1,\n    ......\n    \"BGN\": 1.8,\n    \"VND\": 25467.08\n  }\n*/\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 340,
+        "wires": [
+            [
+                "7e1fac4035a10d48",
+                "d23415438cdb6fdc"
+            ]
+        ]
+    },
+    {
+        "id": "3586b8dbd54b244d",
+        "type": "debug",
+        "z": "b0ecf1213aadaad8",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "d23415438cdb6fdc",
+        "type": "MSSQL",
+        "z": "b0ecf1213aadaad8",
+        "mssqlCN": "a1cc684a79c2fb79",
+        "name": "",
+        "outField": "payload",
+        "returnType": 0,
+        "throwErrors": 1,
+        "query": "insertData",
+        "modeOpt": "",
+        "modeOptType": "execute",
+        "queryOpt": "payload",
+        "queryOptType": "editor",
+        "paramsOpt": "",
+        "paramsOptType": "editor",
+        "rows": "rows",
+        "rowsType": "msg",
+        "parseMustache": true,
+        "params": [
+            {
+                "output": false,
+                "name": "json",
+                "type": "NVarChar(max)",
+                "valueType": "msg",
+                "value": "dataInsert",
+                "options": {
+                    "nullable": true,
+                    "primary": false,
+                    "identity": false,
+                    "readOnly": false
+                }
+            }
+        ],
+        "x": 700,
+        "y": 240,
+        "wires": [
+            [
+                "9abf686467d70811"
+            ]
+        ]
+    },
+    {
+        "id": "9abf686467d70811",
+        "type": "debug",
+        "z": "b0ecf1213aadaad8",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "a1cc684a79c2fb79",
+        "type": "MSSQL-CN",
+        "tdsVersion": "7_4",
+        "name": "",
+        "server": "127.0.0.1",
+        "port": "1433",
+        "encyption": true,
+        "trustServerCertificate": true,
+        "database": "TienTe",
+        "useUTC": true,
+        "connectTimeout": "15000",
+        "requestTimeout": "15000",
+        "cancelTimeout": "5000",
+        "pool": "5",
+        "parseJSON": false,
+        "enableArithAbort": true,
+        "readOnlyIntent": false
+    }
+]
