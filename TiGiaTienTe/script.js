@@ -165,6 +165,23 @@ function displayLastUpdated(data) {
     }
 }
 
+// Function to export exchange rate data to Excel
+// Function to export table data to Excel
+function exportTableToExcel() {
+    // Lấy bảng dữ liệu
+    var table = document.getElementById('exchange_table');
+
+    // Tạo một bảng tính mới
+    var wb = XLSX.utils.table_to_book(table);
+
+    // Xuất ra file Excel
+    XLSX.writeFile(wb, 'exchange_rates.xlsx');
+}
+
+// Gán sự kiện click cho nút export
+document.getElementById('export_button').addEventListener('click', exportTableToExcel);
+
+
 // Call function to get data, draw chart, and populate table when page is loaded
 window.onload = function () {
     getDataAndDrawChart();

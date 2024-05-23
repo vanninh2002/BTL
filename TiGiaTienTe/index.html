@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <!-- Load Google Charts library -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
 </head>
 <body>
     <div id="header">
@@ -37,6 +38,8 @@
             <label for="usdAmount">ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤSố tiền USD:</label>
             <input type="number" id="usdAmount" name="usdAmount" min="0">
             <button onclick="convertUSDToVND()">Quy đổi</button>
+            <!-- Button to export data to Excel -->
+            <button id="export_button">Xuất Excel</button>
             <p id="result"></p>
         </div>
     </div>
