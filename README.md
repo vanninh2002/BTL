@@ -20,3 +20,4 @@
 - Sử dụng HTML, CSS, JS để tạo giao diện web.
 - Sử dụng ASP.NET để vào DB lấy dữ liệu rồi trả về web hiện thị lịch sử và vẽ biểu đồ.
 - Có thêm phần chuyển đổi tiền tệ. ( Nếu có thể làm 😅).
+- Thêm xuất Excel 
